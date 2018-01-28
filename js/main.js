@@ -12,10 +12,11 @@ clickable = 0;
 function writeText(text, index, i, mode = "t", indexD = 0) {
 
 	// zmienic na 26
-	oneLetterTime = 20;
+	oneLetterTime = 26;
 	// jezeli piszemy text
 	if (mode == "t")
 	{
+		if (index == 6) $("#portfolio-div").fadeIn("fast");
 		if (index < Object.keys(text).length)
 		{
 			if (i < text[index].text.length) {
@@ -72,14 +73,14 @@ function details(index)
 }
 
 function run() {
-	document.getElementById("loading").remove();
-	document.getElementById("content").style.display = "block";
+	
 
 	DOMElement = document.getElementById("tekst-div-pre");
 	var JsonText = JSON.parse(text)
 	
 
 	// na test ustaw na index na 12
-	setTimeout(function() {writeText(JsonText, 0, 0, "t")}, 100);	
+	writeText(JsonText, 0, 0, "t")
+	
 }
 

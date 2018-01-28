@@ -21,7 +21,7 @@ body {
 }
 
 #portfolio-div {
-	display: block;
+	display: none;
 	position: absolute;
 	background-color: #313744; /* #355c7d */
 	right: 12.5%;

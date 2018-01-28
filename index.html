@@ -13,11 +13,27 @@
 
 </head>
 
-<body onload="run()">
+<body>
 <div id="loading"><img src="img/loading.gif"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		document.getElementById("loading").remove();
+		$("#content").fadeIn("slow");
+
+		setTimeout(function() {run()}, 2000);	
+	})
+</script>
+
+<script type="text/javascript">
+	$(".single-project").hover(function(){
+		$(this).children(".new-tab").fadeToggle("fast");
+	});
+</script>
 
 <div id="content">
 	<div id="tekst-div" class="block">
@@ -51,11 +67,7 @@
 
 	</div>
 
-	<script type="text/javascript">
-		$(".single-project").hover(function(){
-		    $(this).children(".new-tab").fadeToggle("fast");
-		});
-	</script>
+	
 </div>
 			<!--
 Hello there!
