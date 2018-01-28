@@ -1,7 +1,7 @@
 var isPaused = 0;
 
 var text = 
-'{"0":{"text":"Hello there! My name is Bartek, and this is my portfolio website :)","wait":2},"1":{"text":"Looks empty? Huh...","wait":2},"2":{"text":"Maybe before I show you my projects I will tell you something about me.","wait":2},"3":{"text":"I am 21 years old student of Computer Science on University of Technology in City of Łódź in Poland.","wait":2},"4":{"text":"Right now everything what you can see here is what I learned myself.","wait":2},"5":{"text":"Okay.. thats enough about me, if you want more you can check my CV down below somewhere.","wait":2},"6":{"text":"In right panel you should see my projects (not all, but \'the best\' of what I can show in public ;) )","wait":4},"7":{"text":"I have to go now. If anything here was interesting for you feel free to contact me here:","wait":1},"8":{"text":"Mail: bartlomiej.gorkiewicz@gmail.com","wait":1},"9":{"text":"Skype: Smirnoffq","wait":1},"10":{"text":"also my CV I mentioned earlier: Bartłomiej Górkiewicz CV.","wait":2},"11":{"text":"If you want to learn more about my projects just click on them, and my very advanced AI will tell you more about them ;)","wait":2},"12":{"text":"Bye for now...","wait":0}}'
+'{"0":{"text":"Hello there! My name is Bartek, and this is my portfolio website :)","wait":2},"1":{"text":"Looks empty? Huh... maybe that\'s because I\'m 21 years old, and I don\'t have a lot of real world project on account.","wait":3},"2":{"text":"Maybe before I show you what I have I will tell you something about myself.","wait":2},"3":{"text":"In 2017 I started learning Computer Science on University of Technology in City of Łódź in Poland. Until then I self-taught myself web technologies (prefer backend (PHP)), and a little bit of programming in Python and C.","wait":2},"4":{"text":"Everything you can see here is what I self-taught myself.","wait":2},"5":{"text":"Okay.. thats enough about me, of course I put my CV somewhere down below, so if you want to know something more about me, go ahead and check it out, and if you want to contact me directly here is my email and skype: ","wait":2},"6":{"text":"Mail: bartlomiej.gorkiewicz@gmail.com","wait":1},"7":{"text":"Skype: Smirnoffq","wait":2},"8":{"text":"Now here are my projects (not all, but \'the best\' of what I can show in public ;) )","wait":3},"9":{"text":"I have to go now. If anything here was interesting for you feel free to contact me!","wait":1},"10":{"text":"...also my CV I mentioned earlier: Bartłomiej Górkiewicz CV.","wait":2},"11":{"text":"My very advanced AI will tell you more about every project in right panel, just click on what you are interested in.","wait":2},"12":{"text":"Bye for now...","wait":0}}'
 ;
 
 var dets = 
@@ -12,11 +12,24 @@ clickable = 0;
 function writeText(text, index, i, mode = "t", indexD = 0) {
 
 	// zmienic na 26
-	oneLetterTime = 26;
+	oneLetterTime = 17;
 	// jezeli piszemy text
 	if (mode == "t")
 	{
-		if (index == 6) $("#portfolio-div").fadeIn("fast");
+		// pojawienie sie projektow
+		if (index == 8) 
+		{
+			
+			$("#tekst-div").animate({
+				left: "12.5%",
+				right: "12.5%",
+				margin: null,
+			}, 500, function() {
+				$("#portfolio-div").fadeIn("slow");				
+			})
+		}
+
+
 		if (index < Object.keys(text).length)
 		{
 			if (i < text[index].text.length) {
@@ -24,6 +37,7 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 				i++;
 				setTimeout(function() {writeText(text, index, i, mode)}, oneLetterTime);
 			} else {
+				if (index == 7) document.getElementById("tekst-div-pre").innerHTML += "<br />";
 				document.getElementById("tekst-div-pre").innerHTML += "<br /><br />";
 				timeout = (text[index].wait) * 1000
 				index++;
