@@ -19,14 +19,20 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 		// pojawienie sie projektow
 		if (index == 8) 
 		{
+			if ($(window).width() > 1225) 
+			{
+				$("#tekst-div").animate({
+					left: "12.5%",
+					right: "12.5%",
+					margin: null,
+				}, 600, function() {
+					$("#portfolio-div").fadeIn("slow");				
+				})
+			} else 
+			{
+				$("#portfolio-div").fadeIn("slow");	
+			}
 			
-			$("#tekst-div").animate({
-				left: "12.5%",
-				right: "12.5%",
-				margin: null,
-			}, 500, function() {
-				$("#portfolio-div").fadeIn("slow");				
-			})
 		}
 
 
@@ -94,7 +100,7 @@ function run() {
 	
 
 	// na test ustaw na index na 12
-	writeText(JsonText, 0, 0, "t")
+	writeText(JsonText, 7, 0, "t")
 	
 }
 
