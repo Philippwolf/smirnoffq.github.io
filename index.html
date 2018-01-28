@@ -7,15 +7,19 @@
 <title>Bartłomiej Górkiewicz Portfolio</title>
 
 <link href='css/style.css' rel='stylesheet' type='text/css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+
 
 
 
 </head>
 
 <body onload="run()">
+<div id="loading"><img src="img/loading.gif"></div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<div id="content">
 	<div id="tekst-div" class="block">
 		<pre id="tekst-div-pre"></pre>
 	</div>
@@ -47,11 +51,12 @@
 
 	</div>
 
-<script type="text/javascript">
-	$(".single-project").hover(function(){
-	    $(this).children(".new-tab").fadeToggle("fast");
-	});
-</script>
+	<script type="text/javascript">
+		$(".single-project").hover(function(){
+		    $(this).children(".new-tab").fadeToggle("fast");
+		});
+	</script>
+</div>
 			<!--
 Hello there!
 

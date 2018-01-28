@@ -72,11 +72,14 @@ function details(index)
 }
 
 function run() {
+	document.getElementById("loading").remove();
+	document.getElementById("content").style.display = "block";
+
 	DOMElement = document.getElementById("tekst-div-pre");
 	var JsonText = JSON.parse(text)
 	
 
 	// na test ustaw na index na 12
-	writeText(JsonText, 0, 0, "t");
+	setTimeout(function() {writeText(JsonText, 0, 0, "t")}, 100);	
 }
 

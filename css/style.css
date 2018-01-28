@@ -143,6 +143,26 @@ box-shadow: 7px 7px 1px 0 #000000;*/
 	background-color: #424e54;
 }
 
+#content {
+	display: none;
+}
+
+#loading {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+#loading img {
+	width: 150px;
+	overflow: auto;
+   margin: auto;
+   position: absolute;
+   top: 0; left: 0; bottom: 0; right: 0;
+}
+
 @media only screen and (max-width: 1225px) 
 {
 	#tekst-div, #portfolio-div 
