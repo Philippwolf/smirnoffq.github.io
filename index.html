@@ -8,7 +8,7 @@
 
 <link href='css/style.css' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--<script type="text/javascript" src="js/main.js"></script>-->
+<script type="text/javascript" src="js/main.js"></script>
 
 
 
@@ -17,11 +17,46 @@
 <body onload="run()">
 
 	<div id="tekst-div" class="block">
-		<pre>
+		<pre id="tekst-div-pre"></pre>
+	</div>
+
+
+	<div id="portfolio-div" class="block">
+		<div id="top-line"></div>
+		<div id="header">
+			<h1>BARTŁOMIEJ GÓRKIEWICZ</h1>
+			<h3>Projects</h3>
+		</div>
+
+		<div id="projects-div">
+
+			<div class="single-project" onClick="details(0)">
+				<div class="image" style="background-image: url('img/project1.png');"></div>
+				<div class="new-tab" style="background-image: url('img/link-new-tab.png');"></div>
+				<h2>Games shop</h2>
+			</div>
+
+			<div class="single-project" onClick="details(1)">
+				<div class="image" style="background-image: url('img/project2.png');"></div>
+				<div class="new-tab" style="background-image: url('img/link-new-tab.png');"></div>
+				<h2>League of Legends Shop</h2>
+			</div>
+
+
+		</div>
+
+	</div>
+
+<script type="text/javascript">
+	$(".single-project").hover(function(){
+	    $(this).children(".new-tab").fadeToggle("fast");
+	});
+</script>
+			<!--
 Hello there!
 
-My name is Bartek, and this is my portfolio website :)<!-- (4 sekundy przerwy z mrygajacym kursorem)-->
-<!--
+My name is Bartek, and this is my portfolio website :) (4 sekundy przerwy z mrygajacym kursorem)
+
 Looks empty? Oh! Yeah, my bad, let's change it!
 
 ** creating new files ** (przerwa 2)
@@ -29,7 +64,7 @@ Looks empty? Oh! Yeah, my bad, let's change it!
 3..
 2..
 1..
-** done! ** (i pojawiaja sie 2 okna: tekst,  strona)-->
+** done! ** (i pojawiaja sie 2 okna: tekst,  strona)
 
 So now you see all my projects that I can talk about ;)
 You can click on them, and you will be redirected to either github with code, or it's live version, whenever will be available.
@@ -54,42 +89,7 @@ League of Legends Shop website is shop project where you can buy accounts to Lea
 
 Feel free to contact me on skype: <a href="skype:smirnoffq?add">Smirnoffq</a>
 </i>
-		</pre>
-	</div>
-
-
-	<div id="portfolio-div" class="block">
-		<div id="top-line"></div>
-		<div id="header">
-			<h1>BARTŁOMIEJ GÓRKIEWICZ</h1>
-			<h3>Projects</h3>
-		</div>
-
-		<div id="projects-div">
-
-			<div class="single-project" onClick="window.open('https://github.com/Smirnoffq/Games-shop', '_blank')">
-				<div class="image" style="background-image: url('img/project1.png');"></div>
-				<div class="new-tab" style="background-image: url('img/link-new-tab.png');"></div>
-				<h2>Games shop</h2>
-			</div>
-
-			<div class="single-project" onClick="window.open('https://github.com/Smirnoffq/League-accounts-shop', '_blank')">
-				<div class="image" style="background-image: url('img/project2.png');"></div>
-				<div class="new-tab" style="background-image: url('img/link-new-tab.png');"></div>
-				<h2>League of Legends Shop</h2>
-			</div>
-
-
-		</div>
-
-	</div>
-
-<script type="text/javascript">
-	$(".single-project").hover(function(){
-	    $(this).children(".new-tab").fadeToggle("slow");
-	});
-</script>
-
+		-->
 </body>
 
 </html>
