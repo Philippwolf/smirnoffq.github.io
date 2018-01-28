@@ -100,7 +100,7 @@ function run() {
 	
 
 	// na test ustaw na index na 12
-	writeText(JsonText, 7, 0, "t")
+	writeText(JsonText, 0, 0, "t")
 	
 }
 
