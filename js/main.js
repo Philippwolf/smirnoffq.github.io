@@ -38,8 +38,8 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 		if (index == 10 && i == 0)
 		{
 			cvLink = document.createElement("a");
-			cvLink.href="Bartlomiej Gorkiewicz cv ang";
-			cvLink.download="Bartlomiej Gorkiewicz cv ang";
+			cvLink.href="Bartlomiej_Gorkiewicz_cv_ang.pdf";
+			cvLink.download="Bartlomiej_Gorkiewicz_cv_ang";
 			document.getElementById("tekst-div-pre").appendChild(cvLink);
 		}
 		
@@ -122,7 +122,7 @@ function run() {
 	
 
 	// na test ustaw na index na 12
-	writeText(JsonText, 0, 0, "t")
+	writeText(JsonText, 9, 0, "t")
 	
 }
 
