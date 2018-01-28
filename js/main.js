@@ -1,7 +1,7 @@
 var isPaused = 0;
 
 var text = 
-'{"0":{"text":"Hello there! My name is Bartek, and this is my portfolio website :)","wait":2},"1":{"text":"Looks empty? Huh... maybe that\'s because I\'m 21 years old, and I don\'t have a lot of real world projects on account.","wait":3},"2":{"text":"But before I show you what I have I will tell you something about myself.","wait":2},"3":{"text":"In 2017 I started learning Computer Science on University of Technology in City of Łódź in Poland. Until then I taught myself web technologies (prefer backend (PHP)), and a little bit of programming in Python and C.","wait":2},"4":{"text":"Okay.. thats enough about me, of course I put my CV somewhere down below, so if you want to know something more about me, go ahead and check it out, and if you want to contact me directly here is my email and skype: ","wait":2},"5":{"text":"Mail: bartlomiej.gorkiewicz@gmail.com","wait":1},"6":{"text":"Skype: Smirnoffq","wait":2},"7":{"text":"Now here are my projects (not all, but \'the best\' of what I can show in public ;) )","wait":3},"8":{"text":"I have to go now. If anything here was interesting for you feel free to contact me!","wait":1},"9":{"text":"...also my CV I mentioned earlier: Bartłomiej Górkiewicz CV.","wait":2},"10":{"text":"My very advanced AI will tell you more about every project in right panel, just click on what you are interested in.","wait":2},"11":{"text":"Bye for now...","wait":0}}'
+'{"0":{"text":"Hello there! My name is Bartek, and this is my portfolio website :)","wait":2},"1":{"text":"Looks empty? Huh... maybe that\'s because I\'m 21 years old, and I don\'t have a lot of real world projects on account.","wait":3},"2":{"text":"But before I show you what I have I will tell you something about myself.","wait":2},"3":{"text":"In 2017 I started learning Computer Science on University of Technology in City of Łódź in Poland. Until then I taught myself web technologies (prefer backend (PHP)), and a little bit of programming in Python and C.","wait":2},"4":{"text":"Okay.. thats enough about me, of course I put my CV somewhere down below, so if you want to know something more about me, go ahead and check it out, and if you want to contact me directly here is my email and skype: ","wait":1},"5":{"text":"Mail: bartlomiej.gorkiewicz@gmail.com","wait":0.5},"6":{"text":"Skype: Smirnoffq","wait":0.5},"7":{"text":"Now here are my projects (not all, but \'the best\' of what I can show in public ;) )","wait":3},"8":{"text":"I have to go now. If anything here was interesting for you feel free to contact me!","wait":1},"9":{"text":"...also my CV I mentioned earlier: ","wait":0},"10":{"text":"Bartłomiej Górkiewicz CV","wait":2},"11":{"text":"My very advanced AI will tell you more about every project in right panel, just click on what you are interested in.","wait":2},"12":{"text":"Bye for now...","wait":0}}'
 ;
 
 var dets = 
@@ -35,17 +35,37 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 			
 		}
 
+		if (index == 10 && i == 0)
+		{
+			cvLink = document.createElement("a");
+			cvLink.href="Bartlomiej Gorkiewicz cv ang";
+			cvLink.download="Bartlomiej Gorkiewicz cv ang";
+			document.getElementById("tekst-div-pre").appendChild(cvLink);
+		}
+		
+
+
 
 		if (index < Object.keys(text).length)
 		{
 			if (i < text[index].text.length) {
-				document.getElementById("tekst-div-pre").innerHTML += text[index].text[i];
-				document.getElementById("tekst-div").scrollTop = document.getElementById("tekst-div").scrollHeight;
+				if (index == 10)
+				{
+					cvLink.innerHTML += text[index].text[i];
+				} else 
+				{
+					document.getElementById("tekst-div-pre").innerHTML += text[index].text[i];
+					document.getElementById("tekst-div").scrollTop = document.getElementById("tekst-div").scrollHeight;
+				}
+				
 				i++;
 				setTimeout(function() {writeText(text, index, i, mode)}, oneLetterTime);
 			} else {
-				if (index == 6) document.getElementById("tekst-div-pre").innerHTML += "<br />";
-				document.getElementById("tekst-div-pre").innerHTML += "<br /><br />";
+
+				if (index == 6) document.getElementById("tekst-div-pre").innerHTML += "<br /><br /><br />";
+				else if (index == 9) document.getElementById("tekst-div-pre").innerHTML += "";
+				else document.getElementById("tekst-div-pre").innerHTML += "<br /><br />";
+
 				timeout = (text[index].wait) * 1000
 				index++;
 				setTimeout(function() {writeText(text, index, 0, "t")}, timeout);

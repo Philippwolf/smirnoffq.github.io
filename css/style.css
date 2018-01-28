@@ -144,6 +144,10 @@ box-shadow: 7px 7px 1px 0 #000000;*/
 	background-color: #424e54;
 }
 
+#tekst-div a {
+	color: #a6c3d4;
+}
+
 #content {
 	display: none;
 }
