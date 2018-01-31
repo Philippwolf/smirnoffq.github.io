@@ -170,6 +170,14 @@ box-shadow: 7px 7px 1px 0 #000000;*/
 	margin: auto;
 }
 
+#version {
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	color: #47494f;
+	font-size: 12px;
+}
+
 @media only screen and (max-width: 1225px) 
 {
 	#tekst-div, #portfolio-div 
