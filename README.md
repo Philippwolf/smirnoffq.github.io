@@ -9,5 +9,5 @@ Everything is written on page.
 	- [ ] Improve about me text
 	- [ ] Add links to projects
 	- [x] Add downloadable CV 
-	- [ ] <b>Mobile friendly CSS</b>
-	- [ ] <b>ADD MORE PROJECTS</b>
+	- [ ] Mobile friendly CSS
+	- [ ] ADD MORE PROJECTS
