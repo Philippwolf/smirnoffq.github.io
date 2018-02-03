@@ -82,8 +82,21 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 		clickable = 0;
 		if (indexD < Object.keys(text).length)
 		{
+			if (indexD == 2 && i == 0)
+			{
+				link = document.createElement("a");
+				link.href=text[index][indexD];
+				link.target = "_blank";
+				document.getElementById("tekst-div-pre").appendChild(link);
+			}
+
 			if (i < text[index][indexD].length) {
-				document.getElementById("tekst-div-pre").innerHTML += text[index][indexD][i];
+				if (indexD == 2) {
+					link.innerHTML += text[index][indexD][i];
+				} else 
+				{
+					document.getElementById("tekst-div-pre").innerHTML += text[index][indexD][i];
+				}
 				document.getElementById("tekst-div").scrollTop = document.getElementById("tekst-div").scrollHeight;
 				i++;
 				setTimeout(function() {writeText(text, index, i, mode, indexD)}, oneLetterTime);
