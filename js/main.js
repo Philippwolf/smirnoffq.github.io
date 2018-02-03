@@ -5,7 +5,7 @@ var text =
 ;
 
 var dets = 
-'{"0":{"0":"Game packs shop","1":"Game packs website is shop project where you can buy activation keys to games. You can purchase more than one game in bundle. Payments are done via Paypal SDK. This project was created for one of my client when I worked as Freelancer, unfortunately (or fortunately, because now I can share code here) he did not purchase domain, and project was not tested live.","2":"https://github.com/Smirnoffq/Games-shop"},"1":{"0":"League of Legends accounts shop","1":"Lolaccounts website is shop project where you can buy accounts to League of Legends. Payments are done via Paypal SDK. This project was created for one of my client, unfortunately (or fortunately, because now I can share code here) his domain expired, and project is not available online.","2":"https://github.com/Smirnoffq/League-accounts-shop"}}'
+'{"0":{"0":"Game packs shop","1":"Game packs website is shop project where you can buy activation keys to games. You can purchase more than one game in bundle. Payments are done via Paypal SDK. This project was created for one of my client when I worked as Freelancer, unfortunately (or fortunately, because now I can share code here) he did not purchase domain, and project was not tested live.","2":"https://github.com/Smirnoffq/Games-shop"},"1":{"0":"League of Legends accounts shop","1":"Lolaccounts website is shop project where you can buy accounts to League of Legends. Payments are done via Paypal SDK. This project was created for one of my client, unfortunately (or fortunately, because now I can share code here) his domain expired, and project is not available online.","2":"https://github.com/Smirnoffq/League-accounts-shop"},"2":{"0":"Ok.ru checker","1":"Ok.ru checker is a small script written in Python that checks if ok.ru video is still available","2":"https://github.com/Smirnoffq/ok.ru-video-checker"}}'
 
 clickable = 0;
 
@@ -80,7 +80,7 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 	} else if (mode == "d")
 	{
 		clickable = 0;
-		if (indexD <= Object.keys(text).length)
+		if (indexD < Object.keys(text).length)
 		{
 			if (i < text[index][indexD].length) {
 				document.getElementById("tekst-div-pre").innerHTML += text[index][indexD][i];
