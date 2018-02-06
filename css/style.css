@@ -9,6 +9,8 @@ body {
 	/*font-family: 'Courier', sans-serif;*/
 	font-family: 'Open Sans', sans-serif;
 	position: relative;
+	width: 100vw;
+	height: 100vh;
 	min-width: 768px;
 	background-color: #1a1c24;
 }
@@ -175,7 +177,13 @@ box-shadow: 7px 7px 1px 0 #000000;*/
 	top: 5px;
 	right: 15px;
 	color: #47494f;
-	font-size: 12px;
+	font-size: 10px;
+	text-align: right;
+}
+
+#version a {
+	text-decoration: underline;
+	color: #47494f;
 }
 
 @media only screen and (max-width: 1225px) 
