@@ -1,7 +1,7 @@
 var isPaused = 0;
 
 var text = 
-'{"0":{"text":"Hello there! My name is Bartek, and this is my portfolio website :)","wait":2},"1":{"text":"Looks empty? Huh... maybe that\'s because I\'m 21 years old, and I don\'t have a lot of real world projects on account.","wait":3},"2":{"text":"But before I show you what I have I will tell you something about myself.","wait":2},"3":{"text":"In 2017 I started learning Computer Science on University of Technology in City of Łódź in Poland. Until then I taught myself web technologies (prefer backend (PHP)), and a little bit of programming in Python and C.","wait":2},"4":{"text":"Okay.. thats enough about me, of course I put my CV somewhere down below, so if you want to know something more about me, go ahead and check it out, and if you want to contact me directly here is my email and skype: ","wait":1},"5":{"text":"Mail: bartlomiej.gorkiewicz@gmail.com","wait":0.5},"6":{"text":"Skype: Smirnoffq","wait":0.5},"7":{"text":"Now here are my projects (not all, but \'the best\' of what I can show in public ;) )","wait":3},"8":{"text":"I have to go now. If anything here was interesting for you feel free to contact me!","wait":1},"9":{"text":"...also my CV I mentioned earlier: ","wait":0},"10":{"text":"Bartłomiej Górkiewicz CV","wait":2},"11":{"text":"My very advanced AI will tell you more about every project in right panel, just click on what you are interested in.","wait":2},"12":{"text":"Bye for now...","wait":0}}'
+'{"0":{"text":"Hello there! My name is Bartek, and this is my portfolio website :)","wait":2},"1":{"text":"Looks empty huh? That\'s because I\'m 21 years old, and I don\'t have many real world projects on account. Although here is what I know: *\\n- HTML & CSS\\t\\t\\t\\t[==========90%========--]\\n- JavaScript (and basic JQuery)\\t\\t[==========80%======----]\\n- PHP\\t\\t\\t\\t\\t[==========70%====------]\\n- SQL\\t\\t\\t\\t\\t[==========80%======----]\\n- Python\\t\\t\\t\\t[==========40%----------]\\n- C/C++\\t\\t\\t\\t\\t[Too newbie to establish]\\n","wait":1},"2":{"text":"In 2017 I got IT Technician diploma.","wait":0},"3":{"text":"Also in 2017 I started learning Computer Science on University of Technology in City of Lódz, in Poland.\\n","wait":2},"4":{"text":"All right, if you want to know more about me, I put my CV somewhere down below so go ahead and check this out :) but if you have a wish to contact me directly, here is my email:\\n","wait":1},"5":{"text":"bartlomiej.gorkiewicz@gmail.com\\n","wait":0.5},"6":{"text":"Now here are my projects (not all, but \'the best\' of what I can show in public ;)","wait":1},"7":{"text":"My very advanced AI will tell you more about them, just click on what you are interested in.","wait":2},"8":{"text":"... also my CV I mentioned ealier: ","wait":1},"9":{"text":"Bartłomiej Górkiewicz CV","wait":2},"10":{"text":"\\nBye for now..","wait":1},"11":{"text":"\\n\\n* I cannot really say how much I know given technology in percentages, these are just how confident I am when working with it.\\n","wait":0}}'
 ;
 
 var dets = 
@@ -17,7 +17,7 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 	if (mode == "t")
 	{
 		// pojawienie sie projektow
-		if (index == 7) 
+		if (index == 6) 
 		{
 			if ($(window).width() > 1225) 
 			{
@@ -35,12 +35,16 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 			
 		}
 
-		if (index == 10 && i == 0)
+		if (index == 9 && i == 0)
 		{
 			cvLink = document.createElement("a");
 			cvLink.href="Bartlomiej_Gorkiewicz_cv_ang.pdf";
 			cvLink.download="Bartlomiej_Gorkiewicz_cv_ang";
 			document.getElementById("tekst-div-pre").appendChild(cvLink);
+		} else if (index == 11 && i == 0) 
+		{
+			small = document.createElement("small");
+			document.getElementById("tekst-div-pre").appendChild(small);
 		}
 		
 
@@ -49,9 +53,14 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 		if (index < Object.keys(text).length)
 		{
 			if (i < text[index].text.length) {
-				if (index == 10)
+
+				// link do CV
+				if (index == 9)
 				{
 					cvLink.innerHTML += text[index].text[i];
+				} else if (index == 11)
+				{
+					small.innerHTML += text[index].text[i];
 				} else 
 				{
 					document.getElementById("tekst-div-pre").innerHTML += text[index].text[i];
@@ -61,10 +70,10 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 				i++;
 				setTimeout(function() {writeText(text, index, i, mode)}, oneLetterTime);
 			} else {
-
-				if (index == 6) document.getElementById("tekst-div-pre").innerHTML += "<br /><br /><br />";
-				else if (index == 9) document.getElementById("tekst-div-pre").innerHTML += "";
-				else document.getElementById("tekst-div-pre").innerHTML += "<br /><br />";
+				// link do CV
+				if (index == 5) document.getElementById("tekst-div-pre").innerHTML += "<br /><br />";
+				else if (index == 8) document.getElementById("tekst-div-pre").innerHTML += "";
+				else document.getElementById("tekst-div-pre").innerHTML += "<br />";
 
 				timeout = (text[index].wait) * 1000
 				index++;
@@ -82,6 +91,7 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 		clickable = 0;
 		if (indexD < Object.keys(text).length)
 		{
+			// link do projektu
 			if (indexD == 2 && i == 0)
 			{
 				link = document.createElement("a");
@@ -91,6 +101,7 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 			}
 
 			if (i < text[index][indexD].length) {
+				// link do projektu
 				if (indexD == 2) {
 					link.innerHTML += text[index][indexD][i];
 				} else 

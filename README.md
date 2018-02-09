@@ -6,7 +6,7 @@ Everything is written on page.
 
 	- [x] Self-writing text
 	- [x] Basic css
-	- [ ] Improve about me text
+	- [X] Improve about me text
 	- [ ] Add links to projects
 	- [x] Add downloadable CV 
 	- [ ] Mobile friendly CSS
