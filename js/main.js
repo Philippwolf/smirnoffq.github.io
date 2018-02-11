@@ -12,7 +12,7 @@ clickable = 0;
 function writeText(text, index, i, mode = "t", indexD = 0) {
 
 	// zmienic na 26
-	oneLetterTime = 0;
+	oneLetterTime = 17;
 	// jezeli piszemy text
 	if (mode == "t")
 	{
@@ -146,28 +146,23 @@ function run() {
 	writeText(JsonText, 0, 0, "t")
 }
 
-
 /*
 Do naprawy responsywnosci przy zmienianiu rozmiaru okna ( po pokazaniu drugiego okna )
-
-
+var curWidth = window.innerWidth;
 window.onresize = function() {
 	var div = document.getElementById("tekst-div");
-	if (window.innerWidth > 1385) {
-		if (div.style.left == "0px") {
-			div.style.position = "absolute";
-			div.style.left = "12.5%";
-			div.style.right = "12.5%";
-			div.style.margin = "null";
-		}
-	} else {
-		if (div.style.left != "0px") {
-			div.style.position = "relative";
-			div.style.left = "0px";
-			div.style.margin = "null";
-		}
+	if (window.innerWidth > 1385 && curWidth <= 1385) {
+		div.style.position = "absolute";
+		div.style.left = "12.5%";
+		div.style.right = "12.5%";
+		div.style.margin = "null";
+	} else if (window.innerWidth <= 1385 && curWidth > 1385) {
+		div.style.position = "relative";
+		div.style.left = "0px";
+		div.style.right = "0px";
+		div.style.margin = "auto";
 	}
-	
+	curWidth = window.innerWidth;
 	console.log($(window).width());
 	console.log(div.style.left);
-};*/
+}; */
