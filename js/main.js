@@ -146,31 +146,10 @@ function details(index)
 }
 
 function run() {
-	
-
 	DOMElement = document.getElementById("tekst-div-pre");
 	var JsonText = JSON.parse(text)
 	
 	writeText(JsonText, 0, 0, "t")
 }
 
-/*
-Do naprawy responsywnosci przy zmienianiu rozmiaru okna ( po pokazaniu drugiego okna )
-var curWidth = window.innerWidth;
-window.onresize = function() {
-	var div = document.getElementById("tekst-div");
-	if (window.innerWidth > 1385 && curWidth <= 1385) {
-		div.style.position = "absolute";
-		div.style.left = "12.5%";
-		div.style.right = "12.5%";
-		div.style.margin = "null";
-	} else if (window.innerWidth <= 1385 && curWidth > 1385) {
-		div.style.position = "relative";
-		div.style.left = "0px";
-		div.style.right = "0px";
-		div.style.margin = "auto";
-	}
-	curWidth = window.innerWidth;
-	console.log($(window).width());
-	console.log(div.style.left);
-}; */
+ 

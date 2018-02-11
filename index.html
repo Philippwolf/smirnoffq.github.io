@@ -12,7 +12,7 @@
 
 <body>
 <div id="loading"><img src="img/loading.gif"></div>
-<span id="version">Project version 0.9<br /><a href="https://github.com/Smirnoffq/" target="_blank">My Github</a></span>
+<span id="version">Project version 1.0<br /><a href="https://github.com/Smirnoffq/" target="_blank">My Github</a></span>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
@@ -83,7 +83,21 @@
 
 	
 </div>
-
+<script type="text/javascript">
+	/*
+Do naprawy responsywnosci przy zmienianiu rozmiaru okna ( po pokazaniu drugiego okna )
+*/
+curWidth = window.innerWidth;
+window.onresize = function() {
+	div = document.getElementById("tekst-div");
+	portfolioDiv = document.getElementById("portfolio-div");
+	if (window.innerWidth > 1385 && portfolioDiv.offsetHeight > 0) {
+		div.className = "block lg";
+	} else if (window.innerWidth <= 1385 && portfolioDiv.offsetHeight > 0) {
+		div.className = "block sm";
+	}
+};
+</script>
 </body>
 
 </html>

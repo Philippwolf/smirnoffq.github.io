@@ -177,6 +177,18 @@ body {
 	color: #47494f;
 }
 
+/* responsywnosci przy zmienianiu rozmiaru okna */
+.sm {
+	left: 0 !important;
+	right: 0 !important;
+	margin: 20px auto !important;
+}
+
+.lg {
+	left: 12.5% !important;
+	right: auto !important;
+}
+/* responsywnosci przy zmienianiu rozmiaru okna KONIEC */
 
 /* Scroll */
 
@@ -212,7 +224,7 @@ body {
 		width: 85%;
 		left: 0;
 		right: 0;
-		margin: 20px auto !important;
+		margin: 20px auto;
 		height: 40vh;
 		overflow-y: scroll;
 	}
@@ -222,6 +234,14 @@ body {
 {
 	#tekst-div 
 	{
-		font-size: 19px;
+		font-size: 15px;
+	}
+
+	#version {
+		top: 0px;
+	}
+
+	#portfolio-div .single-project h2 {
+		font-size: 12px;
 	}
 }
