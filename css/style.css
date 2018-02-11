@@ -11,7 +11,7 @@ body {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
-	min-width: 768px;
+	min-width: 300px;
 	background-color: #1a1c24;
 }
 
@@ -70,15 +70,14 @@ body {
 #portfolio-div .single-project {
 	border: 1px solid #f67280;
 	width: 35%;
+	padding-bottom: 35%;
 	position: relative;
 	cursor: pointer;
 	display: inline-block;
 	margin-left: 10%;
 	margin-top: 20px; 
 	border-radius: 3px;
-	/*
--webkit-box-shadow: 7px 7px 1px 0 #000000;
-box-shadow: 7px 7px 1px 0 #000000;*/
+	overflow: hidden;
 }
 
 #portfolio-div .single-project h2 {
@@ -94,24 +93,17 @@ box-shadow: 7px 7px 1px 0 #000000;*/
 }
 
 #portfolio-div .single-project .image {
+	position: absolute;
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 200px;
-
+    height: 100%;
+    width: 100%;
+    transition: all .35s;
 }
 
-#portfolio-div .single-project .new-tab {
-	position: absolute;
-	top: 0;
-	z-index: 5;
-	background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center center;
-    height: 180px;
-    width: 100%;
-    background-color: rgba(246,114,128,0.5);
-    display: none;
+#portfolio-div .single-project .image:hover {
+	transform: scale(1.2);
 }
 
 #tekst-div {
