@@ -1,4 +1,4 @@
-# My portfolio website v 0.9
+# My portfolio website v 1.0
 
 Everything is written on page.
 
