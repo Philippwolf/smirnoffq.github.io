@@ -1,7 +1,7 @@
 var isPaused = 0;
 
 var text = 
-'{"0":{"text":"Hello there! My name is Bartek, and this is my portfolio website :)","wait":2},"1":{"text":"Looks empty huh? That\'s because I\'m 21 years old, and I don\'t have many real world projects on account. Although here is what I know: *\\n- HTML & CSS\\t\\t\\t\\t[==========90%========--]\\n- JavaScript (and basic JQuery)\\t\\t[==========80%======----]\\n- PHP\\t\\t\\t\\t\\t[==========70%====------]\\n- SQL\\t\\t\\t\\t\\t[==========80%======----]\\n- Python\\t\\t\\t\\t[==========40%----------]\\n- C/C++\\t\\t\\t\\t\\t[Too newbie to establish]\\n","wait":1},"2":{"text":"In 2017 I got IT Technician diploma.","wait":0},"3":{"text":"Also in 2017 I started learning Computer Science on University of Technology in City of Lódz, in Poland.\\n","wait":2},"4":{"text":"All right, if you want to know more about me, I put my CV somewhere down below so go ahead and check this out :) but if you have a wish to contact me directly, here is my email:\\n","wait":1},"5":{"text":"bartlomiej.gorkiewicz@gmail.com\\n","wait":0.5},"6":{"text":"Now here are my projects (not all, but \'the best\' of what I can show in public ;)","wait":1},"7":{"text":"My very advanced AI will tell you more about them, just click on what you are interested in.","wait":2},"8":{"text":"... also my CV I mentioned ealier: ","wait":1},"9":{"text":"Bartłomiej Górkiewicz CV","wait":2},"10":{"text":"\\nBye for now..","wait":1},"11":{"text":"\\n\\n* I cannot really say how much I know given technology in percentages, these are just how confident I am when working with it.\\n","wait":0}}'
+'{"0":{"text":"Hello there! My name is Bartek, and this is my portfolio website :)","wait":2},"1":{"text":"Looks empty huh? That\'s because I\'m 21 years old, and I don\'t have many real world projects on account. Although here is what I know: *\\n- HTML & CSS\\t\\t\\t\\t[==========90%========--]\\n- JavaScript (with JQuery)\\t\\t[==========80%======----]\\n- PHP\\t\\t\\t\\t\\t[==========70%====------]\\n- SQL\\t\\t\\t\\t\\t[==========80%======----]\\n- Python\\t\\t\\t\\t[==========40%----------]\\n- C/C++\\t\\t\\t\\t\\t[Too newbie to establish]\\n","wait":1},"2":{"text":"In 2017 I got IT Technician diploma.","wait":0},"3":{"text":"Also in 2017 I started learning Computer Science on University of Technology in City of Lódz, in Poland.\\n","wait":2},"4":{"text":"All right, if you want to know more about me, I put my CV somewhere down below so go ahead and check this out :) but if you have a wish to contact me directly, here is my email:\\n","wait":1},"5":{"text":"bartlomiej.gorkiewicz@gmail.com\\n","wait":0.5},"6":{"text":"Now here are my projects (not all, but \'the best\' of what I can show in public ;)","wait":1},"7":{"text":"My very advanced AI will tell you more about them, just click on what you are interested in.","wait":2},"8":{"text":"... also my CV I mentioned ealier: ","wait":1},"9":{"text":"Bartłomiej Górkiewicz CV","wait":2},"10":{"text":"\\nBye for now..","wait":1},"11":{"text":"\\n\\n* I cannot really say how much I know given technology in percentages, these are just how confident I am when working with it.\\n","wait":0}}'
 ;
 
 var dets = 
@@ -99,10 +99,18 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 				document.getElementById("tekst-div-pre").appendChild(link);
 			}
 
+			if (indexD == 0 && i == 0)
+			{
+				b = document.createElement("b");
+				document.getElementById("tekst-div-pre").appendChild(b);
+			}
+
 			if (i < text[index][indexD].length) {
 				// link do projektu
 				if (indexD == 2) {
 					link.innerHTML += text[index][indexD][i];
+				} else if (indexD == 0) {
+					b.innerHTML += text[index][indexD][i];
 				} else 
 				{
 					document.getElementById("tekst-div-pre").innerHTML += text[index][indexD][i];
