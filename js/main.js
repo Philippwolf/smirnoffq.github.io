@@ -5,25 +5,24 @@ var text =
 ;
 
 var dets = 
-'{"0":{"0":"Game packs shop","1":"Game packs website is shop project where you can buy activation keys to games. You can purchase more than one game in bundle. Payments are done via Paypal SDK. This project was created for one of my client when I worked as Freelancer, unfortunately (or fortunately, because now I can share code here) he did not purchase domain, and project was not tested live.","2":"https://github.com/Smirnoffq/Games-shop"},"1":{"0":"League of Legends accounts shop","1":"Lolaccounts website is shop project where you can buy accounts to League of Legends. Payments are done via Paypal SDK. This project was created for one of my client, unfortunately (or fortunately, because now I can share code here) his domain expired, and project is not available online.","2":"https://github.com/Smirnoffq/League-accounts-shop"},"2":{"0":"Ok.ru checker","1":"Ok.ru checker is a small script written in Python that checks if ok.ru video is still available","2":"https://github.com/Smirnoffq/ok.ru-video-checker"}}'
+'{"0":{"0":"Game packs shop","1":"Game packs website is shop project where you can buy activation keys to games. You can purchase more than one game in bundle. Payments are done via Paypal SDK. This project was created for one of my client when I worked as Freelancer, unfortunately (or fortunately, because now I can share code here) he did not purchase domain, and project was not tested live.\\nUsed technologies:\\n- HTML\\n-CSS\\n-JavaScript\\n- PHP\\n-Paypal SDK","2":"https://github.com/Smirnoffq/Games-shop"},"1":{"0":"League of Legends accounts shop","1":"Lolaccounts website is shop project where you can buy accounts to League of Legends. Payments are done via Paypal SDK. This project was created for one of my client, unfortunately (or fortunately, because now I can share code here) his domain expired, and project is not available online.\\nUsed technologies:\\n-HTML\\n-CSS\\n-JavaScript\\n-PHP\\n-Paypal SDK","2":"https://github.com/Smirnoffq/League-accounts-shop"},"2":{"0":"Ok.ru checker","1":"Ok.ru checker is a small script written in Python that checks if ok.ru video is still available\\nUsed technologies:\\n-Python with BeautifulSoup","2":"https://github.com/Smirnoffq/ok.ru-video-checker"},"3":{"0":"Paste.me","1":"UNFINISHED PROJECT\\nBasically copy of pastebin and similar websites. You can share notes/code with others.\\nUsed technologies:\\n-HTML/CSS/JS\\n-OOP PHP\\n-MySQL","2":"https://github.com/Smirnoffq/pasteme"},"4":{"0":"My portfolio","1":"You are looking at it right now ;)\\nUsed technologies:\\n-HTML/CSS/JS","2":"https://github.com/Smirnoffq/smirnoffq.github.io"}}'
 
 clickable = 0;
 
 function writeText(text, index, i, mode = "t", indexD = 0) {
 
 	// zmienic na 26
-	oneLetterTime = 17;
+	oneLetterTime = 0;
 	// jezeli piszemy text
 	if (mode == "t")
 	{
 		// pojawienie sie projektow
 		if (index == 6) 
 		{
-			if ($(window).width() > 1225) 
+			if ($(window).width() > 1385) 
 			{
 				$("#tekst-div").animate({
 					left: "12.5%",
-					right: "12.5%",
 					margin: null,
 				}, 600, function() {
 					$("#portfolio-div").fadeIn("slow");				
@@ -89,7 +88,7 @@ function writeText(text, index, i, mode = "t", indexD = 0) {
 	} else if (mode == "d")
 	{
 		clickable = 0;
-		if (indexD < Object.keys(text).length)
+		if (indexD < Object.keys(text[index]).length)
 		{
 			// link do projektu
 			if (indexD == 2 && i == 0)
@@ -144,9 +143,31 @@ function run() {
 	DOMElement = document.getElementById("tekst-div-pre");
 	var JsonText = JSON.parse(text)
 	
-
-	// na test ustaw na index na 12
 	writeText(JsonText, 0, 0, "t")
-	
 }
 
+
+/*
+Do naprawy responsywnosci przy zmienianiu rozmiaru okna ( po pokazaniu drugiego okna )
+
+
+window.onresize = function() {
+	var div = document.getElementById("tekst-div");
+	if (window.innerWidth > 1385) {
+		if (div.style.left == "0px") {
+			div.style.position = "absolute";
+			div.style.left = "12.5%";
+			div.style.right = "12.5%";
+			div.style.margin = "null";
+		}
+	} else {
+		if (div.style.left != "0px") {
+			div.style.position = "relative";
+			div.style.left = "0px";
+			div.style.margin = "null";
+		}
+	}
+	
+	console.log($(window).width());
+	console.log(div.style.left);
+};*/

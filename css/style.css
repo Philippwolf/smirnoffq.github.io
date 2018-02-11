@@ -23,15 +23,14 @@ body {
 }
 
 #portfolio-div {
-	display: none;
 	position: absolute;
 	background-color: #313744; /* #355c7d */
 	right: 12.5%;
 	top: 5vh;
-	min-width: 458px;
+	min-width: 300px;
 	border-radius: 3px;
-  box-shadow: 0px 4px 0px 2px rgba(0,0,0,0.1);
-	
+  	box-shadow: 0px 4px 0px 2px rgba(0,0,0,0.1);
+	height: 85vh;
 }
 
 #portfolio-div #top-line {
@@ -124,10 +123,10 @@ box-shadow: 7px 7px 1px 0 #000000;*/
 	right: 0;
 	top: 5vh;
 	margin: auto;
-	min-width: 458px;
+	min-width: 300px;
 	border-radius: 3px;
-  box-shadow: 0px 4px 0px 2px rgba(0,0,0,0.1);
-	
+  	box-shadow: 0px 4px 0px 2px rgba(0,0,0,0.1);
+	height: 85vh;
 }
 
 #tekst-div pre {
@@ -186,7 +185,33 @@ box-shadow: 7px 7px 1px 0 #000000;*/
 	color: #47494f;
 }
 
-@media only screen and (max-width: 1225px) 
+
+/* Scroll */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #313744; 
+    border-radius: 3px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #1a1c24; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #0f1015; 
+}
+
+@media only screen and (max-width: 1385px) 
 {
 	#tekst-div, #portfolio-div 
 	{
@@ -198,5 +223,13 @@ box-shadow: 7px 7px 1px 0 #000000;*/
 		margin: 20px auto !important;
 		height: 40vh;
 		overflow-y: scroll;
+	}
+}
+
+@media only screen and (max-width: 426px) 
+{
+	#tekst-div 
+	{
+		font-size: 19px;
 	}
 }
