@@ -239,6 +239,7 @@ body {
 
 	#version {
 		top: 0px;
+		font-size: 7px;
 	}
 
 	#portfolio-div .single-project h2 {
